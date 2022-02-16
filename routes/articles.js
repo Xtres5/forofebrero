@@ -6,6 +6,18 @@ router.get('/new', (req, res) => {
     res.render('articles/new', { article: new Article() })
 })
 
+router.get('/aprobaste', (req, res) => {
+    res.render('articles/aprobaste')
+})
+
+router.get('/sas', (req, res) => {
+    res.render('articles/sas')
+})
+
+router.get('/sus', (req, res) => {
+    res.render('articles/sus')
+})
+
 router.get('/:id', async (req, res) => {
     const article = await Article.findById(req.params.id)
     if (article == null) res.redirect('/')
